@@ -1,8 +1,9 @@
+{{ define "version" }}2.36.1{{ end }}
 name: binutils
-version: 2.36.1
+version: {{ template "version" }}
 description: The GNU Binary Utilities, or binutils, are a set of programming tools for creating and managing binary programs, object files, libraries, profile data, and assembly source code.
 files:
-  - url: http://ftp.gnu.org/gnu/binutils/binutils-{{ version }}.tar.xz
+  - url: http://ftp.gnu.org/gnu/binutils/binutils-{{ template "version" }}.tar.xz
     buildstyle: autotools
     autotools:
       configure: --disable-nls --disable-multilib
